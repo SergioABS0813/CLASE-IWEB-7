@@ -161,7 +161,7 @@ sum(salary) ---> suma todos los salarios por cada departament_id
 Si queremos ordenar los máximos salarios de mayor a menor, lo hariamos con ORDER BY y agregado con "as" un alias para luego emplearlo:
 
 ## Instrucción HAVING
-Sirve SOLAMENTE para filtrar resultados de agrupamiento
+Sirve SOLAMENTE para filtrar resultados de agrupamiento (GROUP BY)
 
 como no se puede hacer así:
 
@@ -173,6 +173,58 @@ Aplicamos filtro como si fuera WHERE
 
 <img width="460" alt="image" src="https://github.com/SergioABS0813/CLASE-IWEB-8/assets/134556600/7dc6c2bf-9760-42b5-88ad-a3e1bdf60285">
 
+## Instrucción SELECT-LIMIT
+
+Nos muestra los x primeras filas:
+
+    select * from employees limit <x>
+
+![image](https://github.com/SergioABS0813/CLASE-IWEB-8/assets/134556600/5b17fb94-f671-4f99-82fb-6a381566ea27)
+
+Para que nos muestre los 5 siguientes a los iniciales (es decir empieza a mostrarnos desde el 5 hasta el 10 porque le pusismos 5 al final) X es el salto desde el inicio y Y es la cantidad de filas que nos mostrará
+
+    select * from employees limit <x,y>
+
+![image](https://github.com/SergioABS0813/CLASE-IWEB-8/assets/134556600/481f5b7a-191f-4b05-b444-ec30c1fc2b91)
+
+NO HACER ESTO: ya que cada fila hace match con toda la tabla:
+
+![image](https://github.com/SergioABS0813/CLASE-IWEB-8/assets/134556600/4c51758f-23c8-4966-ac0f-96ca5c9c07cf)
+
+HACER ESTO:
+Le colocamos la condición en que el job_id de la tabla Employess sea igual al job_id de la tabla Jobs
+
+![image](https://github.com/SergioABS0813/CLASE-IWEB-8/assets/134556600/eb6bceab-0c62-449f-99a0-eb5119574a05)
+
+Para codificar menos se les puede asignar letras a las tablas:
+
+![image](https://github.com/SergioABS0813/CLASE-IWEB-8/assets/134556600/988e0dba-6009-4ce3-bc5a-d5652a9c66be)
+
+## Relación Jefe del Jefe
+
+![image](https://github.com/SergioABS0813/CLASE-IWEB-8/assets/134556600/89242d38-ff1c-4857-8f3d-de2bf8df5c30)
+
+Copiamos la tabla employees y le asignamos una letra e y una letra m para igualar el manager_id de la tabla Employees (e) a employee_id de la tabla Employees (m)
+
+![image](https://github.com/SergioABS0813/CLASE-IWEB-8/assets/134556600/7030b90b-c9ac-4cd1-ae3f-60fa1862b9d8)
+
+## Relación de Tablas
+Para relacionar tablas es mejor asignarle una letra como identificador de una letra:
+
+![image](https://github.com/SergioABS0813/CLASE-IWEB-8/assets/134556600/5fd14a5e-e264-447a-98c8-696fa84a8c3a)
+
+Relacionado de Varias Tablas:
+
+![image](https://github.com/SergioABS0813/CLASE-IWEB-8/assets/134556600/ee192bf0-dc9b-4bd8-b6b0-d90a7685e242)
+
+## INNER JOIN
+
+![image](https://github.com/SergioABS0813/CLASE-IWEB-8/assets/134556600/ac2a3228-eb7d-4e4b-9492-8efda6b61751)
+
+Para que muestre o no tenga JEFE o sea que su manager_id sea null
+
+## LEFT JOIN
+Lo que está a la izquierda si o si se va a mostrar y si no existe, entonces se motrará en null.
 
 ## PRACTICAS
 NOTA: El asterisco significa TODA LA TABLA y con coma podemos agregar más columnas para una mejor visión, esto no tiene repercusiones en la Base de Datos.
